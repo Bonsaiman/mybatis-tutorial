@@ -1,0 +1,28 @@
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="context1">
+
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="false"/>
+        </commentGenerator>
+
+        <jdbcConnection
+                driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+                connectionURL="jdbc:sqlserver://localhost:1433;databaseName=mybatis;trustServerCertificate=true;"
+                userId="sa"
+                password="546213"/>
+
+
+        <javaModelGenerator targetPackage="mybatis.entity" targetProject="src/main/java"/>
+
+        <sqlMapGenerator targetPackage="mybatis.mapper" targetProject="src/main/java"/>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="mybatis.dao" targetProject="src/main/java"/>
+
+        <table tableName="driver" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+    </context>
+</generatorConfiguration>

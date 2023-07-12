@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.mapper.UserMapper">
+
+    <!--    void insertUser(int id);-->
+    <insert id="insertUser">
+        INSERT INTO test_user
+        VALUES(2, 'Di María', 11)
+    </insert>
+
+    <!--    int deleteUser(int id);-->
+    <delete id="deleteUser">
+        DELETE FROM test_user
+        WHERE id = #{id}
+    </delete>
+
+    <!--    int updateUser();-->
+    <update id="updateUser">
+        UPDATE test_uest SET username = 'Mbappe'
+        WHERE id = 10
+    </update>
+
+    <!--    User getUserById();-->
+    <select id="getUserById" resultType="User">
+        SELECT *
+        FROM test_user
+        WHERE id = #{id}
+    </select>
+
+    <!--    User getUserByUserName(String userName);-->
+    <select id="getUserByUserName" resultType="User">
+        SELECT *
+        FROM test_user
+        WHERE userName = #{userName}
+    </select>
+
+    <!--    List<User> getUserList();-->
+    <select id="getUserList" resultType="mybatis.entity.User">
+        SELECT *
+        FROM test_user
+    </select>
+
+</mapper>
